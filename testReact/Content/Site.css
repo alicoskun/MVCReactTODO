@@ -1,0 +1,48 @@
+﻿body {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* To remove space between text inputs */
+.input-group > .input-group-btn:empty {
+    width: 0px;
+}
+
+/* Fix right border radius on Bootstrap-select when is the first element */
+.input-group-btn:first-child:not(:last-child) > .bootstrap-select > button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: red; /* Delete this line */
+}
+
+/* Fix left border radius on Bootstrap-select when is the last element */
+.input-group-btn:last-child > .bootstrap-select > button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: blue; /* Delete this line */
+}
+
+/* Fix border radius on Bootstrap-select and buttons when they are in the middle */
+.input-group-btn:not(:first-child):not(:last-child) > .bootstrap-select > button, .input-group-btn:not(:first-child):not(:last-child) > button {
+    border-radius: 0;
+    color: green; /* Delete this line */
+}
