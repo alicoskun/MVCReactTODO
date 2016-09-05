@@ -8,37 +8,41 @@ namespace MVCReactTODO.Controllers
 {
     public class CommentController : ApiController
     {
-        private static readonly List<Comment> comments = new List<Comment>
+        private List<TODOLIST> todos = null;
+        private ReactappEntities ent = null;
+
+        public CommentController()
         {
-            new Comment
-            {
-                Id = 1,
-                Author = "Ali Coşkun",
-                Text = "Metal is just noice."
-            }
-        };
+            todos = new List<TODOLIST>();
+            ent = new ReactappEntities();
+        }
 
         [HttpGet]
         [Route("api/comment")]
-        public IEnumerable<Comment> GetComments()
+        public IEnumerable<TODOLIST> GetComments()
         {
-            return comments;
+            var todos = ent.TODOLIST.ToList();
+            return todos;
         }
 
         [HttpPost]
         [Route("api/comment")]
-        public void AddComment(Comment comment)
+        public void AddComment(TODOLIST todo)
         {
-            comment.Id = new Random().Next();
-            comments.Add(comment);
+            ent.TODOLIST.Add(todo);
+            ent.SaveChanges();  
         }
 
         [HttpDelete]
         [Route("api/comment/{commentId}")]
         public void DeleteComment(int commentId)
         {
-            // todo: normally we would check for existence
-            comments.Remove(comments.First(x => x.Id == commentId));
+            // This line is to find out the record by the id
+            TODOLIST todo = ent.TODOLIST.Find(commentId);
+
+            //This part is use for Delete
+            ent.TODOLIST.Remove(todo);
+            ent.SaveChanges();
         }
     }
 }

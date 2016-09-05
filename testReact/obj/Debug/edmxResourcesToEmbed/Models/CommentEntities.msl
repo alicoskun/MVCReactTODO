@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="reactappModelStoreContainer" CdmEntityContainer="reactappEntities">
+    <EntitySetMapping Name="TODOLIST">
+      <EntityTypeMapping TypeName="reactappModel.TODOLIST">
+        <MappingFragment StoreEntitySet="TODOLIST">
+          <ScalarProperty Name="todoID" ColumnName="todoID" />
+          <ScalarProperty Name="todoAuthor" ColumnName="todoAuthor" />
+          <ScalarProperty Name="todoText" ColumnName="todoText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
