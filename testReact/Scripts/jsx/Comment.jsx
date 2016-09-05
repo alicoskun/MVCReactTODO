@@ -35,13 +35,9 @@ var CommentForm = React.createClass({
         this.setState(this.getInitialState());
     },
     render: function () {
-        var divStyle = {
-            padding: '15px',
-            "margin-top": '10px'
-        };
         return (
             <form onSubmit={this.handleSubmit }>
-                <div className="input-group alert-warning" style={divStyle}>
+                <div className="input-group alert-warning commentForm">
                 <input className="form-control"
                        type="text"
                        placeholder="Your Name"
@@ -56,7 +52,8 @@ var CommentForm = React.createClass({
                        onChange={this.handleTextChange
                 } />
                 <span className="input-group-btn">
-                <button className="btn btn-default" type="submit" value="Post">Post</button>
+                <button className="btn btn-default"
+                    type="submit" value="Post">Post</button>
                 </span>
                     {this.state.message}
                 </div>
@@ -76,15 +73,10 @@ var Comment = React.createClass({
     },
     render: function () {
         var commentStyle = {
-            "padding-left": '15px',
-            "padding-right": '15px',
-            "padding-bottom": '15px',
-            border: '1px solid transparent',
-            "border-radius": '4px',
             display: this.state.toBeDeleted ? 'none' : 'block'
         };
         return (
-            <div className="navbar-form alert-success" style={commentStyle}>
+            <div className="navbar-form alert-success comment" style={commentStyle}>
                 <table width="100%">
                     <tr>
                         <td width="100%" colspan="2">
@@ -95,7 +87,7 @@ var Comment = React.createClass({
                     </tr>
                     <tr>
                         <td><span>{this.props.children}</span></td>
-                        <td align="right"><button className="btn btn-default" onClick={this.deleteComment }>Delete</button></td>
+                        <td align="right"><button className="btn btn-default buttonDelete" onClick={this.deleteComment}>Delete</button></td>
                     </tr>
                 </table>
             </div>
@@ -189,11 +181,9 @@ var CommentBox = React.createClass({
     },
     render: function () {
         var renderError = this.state.errorMessage !== '';
-        var divStyle = {
-            width: '46%'
-        };
+
         return (
-            <div style={divStyle}>
+            <div className="commentBox">
                 {renderError ? <ErrorMessage>{this.state.errorMessage}</ErrorMessage> : null}
                 <CommentForm onCommentSubmit={this.handleCommentSubmit}></CommentForm>
                 <CommentList comments={this.state.data} url={this.props.url}></CommentList>
@@ -228,8 +218,8 @@ var CommentWrapper = React.createClass({
     render: function () {
         return (
             <div className="navbar-form">
-                <button className="btn btn-default" onClick={this.handleSwitchClick }>Switch</button>
-                {this.state.isCommentBoxVisible ? <CommentBox url="/api/comment" pollInterval={5000 }></CommentBox> : null}
+                {/* <button className="btn btn-default" onClick={this.handleSwitchClick }>Switch</button> */}
+                {this.state.isCommentBoxVisible ? <CommentBox url="/api/comment" pollInterval={5000}></CommentBox> : null}
             </div>
         );
     }

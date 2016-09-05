@@ -4,15 +4,17 @@
 }
 <html>
 <head>
-    <title>Hello React</title>    
-    @Styles.Render("~/Content/css")
+    <title>Hello React</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/react")
 </head>
 <body>
+    <div class="text-center">
+        <h1 class="appName">todos</h1>
+    </div>
     <div id="container"></div>
-    
-    <script src="https://fb.me/react-0.14.0.js"></script>
-    <script src="https://fb.me/react-dom-0.14.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <script src="@Url.Content("~/Scripts/jsx/Comment.jsx")"></script>
 </body>
 </html>

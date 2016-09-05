@@ -8,7 +8,7 @@ namespace MVCReactTODO.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -22,9 +22,13 @@ namespace MVCReactTODO.App_Start
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
+                      "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/react").Include(
+                      "~/Scripts/react/react.min.js",
+                      "~/Scripts/react/react-dom.min.js"));
         }
     }
 }

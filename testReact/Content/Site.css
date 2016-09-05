@@ -1,12 +1,47 @@
 ﻿body {
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.4em;
+	background: #f5f5f5;
+	color: #4d4d4d;
+	min-width: 230px;
+	max-width: 550px;
+	margin: 0 auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-weight: 300;
     padding-top: 15px;
     padding-bottom: 20px;
+}
+
+.appName {
+    color: rgba(175, 47, 47, 0.15);
+    font-size: 100px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.comment {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.commentForm {
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.buttonDelete {
+    color: rgba(175, 47, 47, 0.6);
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -44,5 +79,5 @@ textarea {
 /* Fix border radius on Bootstrap-select and buttons when they are in the middle */
 .input-group-btn:not(:first-child):not(:last-child) > .bootstrap-select > button, .input-group-btn:not(:first-child):not(:last-child) > button {
     border-radius: 0;
-    color: green; /* Delete this line */
+    color: rgba(0, 128, 0, 0.44); /* Delete this line */
 }
