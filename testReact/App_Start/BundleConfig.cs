@@ -1,4 +1,5 @@
 ﻿using System.Web.Optimization;
+using System.Web.Optimization.React;
 
 namespace MVCReactTODO.App_Start
 {
@@ -29,6 +30,10 @@ namespace MVCReactTODO.App_Start
             bundles.Add(new ScriptBundle("~/bundles/react").Include(
                       "~/Scripts/react/react.min.js",
                       "~/Scripts/react/react-dom.min.js"));
+
+            bundles.Add(new BabelBundle("~/bundles/comment").Include(
+                "~/Scripts/jsx/Comment.jsx"
+            ));
         }
     }
 }

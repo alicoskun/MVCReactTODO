@@ -245,3 +245,5 @@ C:\Users\ali\Source\Repos\MVCReactTODO\MVCReactTODO\testReact\bin\EntityFramewor
 C:\Users\ali\Source\Repos\MVCReactTODO\MVCReactTODO\testReact\bin\EntityFramework.SqlServer.dll
 C:\Users\ali\Source\Repos\MVCReactTODO\MVCReactTODO\testReact\bin\EntityFramework.xml
 C:\Users\ali\Source\Repos\MVCReactTODO\MVCReactTODO\testReact\bin\EntityFramework.SqlServer.xml
+C:\Users\ali\Source\Repos\MVCReactTODO\MVCReactTODO\testReact\bin\System.Web.Optimization.React.dll
+C:\Users\ali\Source\Repos\MVCReactTODO\MVCReactTODO\testReact\bin\System.Web.Optimization.React.xml

@@ -14,7 +14,8 @@
         <h1 class="appName">todos</h1>
     </div>
     <div id="container"></div>
-
-    <script src="@Url.Content("~/Scripts/jsx/Comment.jsx")"></script>
+    
+    @Scripts.Render("~/bundles/comment")
+    @Html.ReactInitJavaScript()
 </body>
 </html>
