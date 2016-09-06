@@ -53,9 +53,10 @@ var CommentForm = React.createClass({
                 } />
                 <span className="input-group-btn">
                 <button className="btn btn-default"
-                    type="submit" value="Post">Post</button>
-                </span>
-                    {this.state.message}
+                        type="submit" value="Post">
+                    Post
+                </button>
+                </span>{this.state.message}
                 </div>
             </form>
         );
@@ -80,13 +81,12 @@ var Comment = React.createClass({
                 <table width="100%">
                     <tr>
                         <td width="100%" colspan="2">
-                        <h3>
-                            {this.props.author}
+                        <h3 className="breakWord">{this.props.author}
                         </h3>
                         </td>
                     </tr>
                     <tr>
-                        <td><span>{this.props.children}</span></td>
+                        <td><span className="breakWord">{this.props.children}</span></td>
                         <td align="right"><button className="btn btn-default buttonDelete" onClick={this.deleteComment}>Delete</button></td>
                     </tr>
                 </table>
@@ -114,16 +114,14 @@ var CommentList = React.createClass({
         var onDeleteFunc = this.handleCommentDelete;
         var commentNodes = this.props.comments.map(function (comment) {
             return (
-                <Comment author={comment.author} id={comment.id} key={comment.id} onCommentDelete={onDeleteFunc}>
-                    {comment.text}
+                <Comment author={comment.author} id={comment.id} key={comment.id} onCommentDelete={onDeleteFunc}>{comment.text}
                 </Comment>
             );
         });
 
         return (
             <div>
-                <span>Comments: {commentNodes.length}</span>
-                {commentNodes}
+                <span>Comments: {commentNodes.length}</span>{commentNodes}
             </div>
         );
     }
@@ -200,8 +198,7 @@ var ErrorMessage = React.createClass({
         };
 
         return (
-            <span style={errorStyle}>
-                {this.props.children}
+            <span style={errorStyle}>{this.props.children}
             </span>
         );
     }
@@ -217,8 +214,7 @@ var CommentWrapper = React.createClass({
     },
     render: function () {
         return (
-            <div className="navbar-form">
-                {/* <button className="btn btn-default" onClick={this.handleSwitchClick }>Switch</button> */}
+            <div className="navbar-form">{/* <button className="btn btn-default" onClick={this.handleSwitchClick }>Switch</button> */}
                 {this.state.isCommentBoxVisible ? <CommentBox url="/api/comment" pollInterval={5000}></CommentBox> : null}
             </div>
         );

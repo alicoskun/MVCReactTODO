@@ -1,15 +1,15 @@
 ﻿body {
-	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	line-height: 1.4em;
-	background: #f5f5f5;
-	color: #4d4d4d;
-	min-width: 230px;
-	max-width: 550px;
-	margin: 0 auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	font-weight: 300;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    background: #f5f5f5;
+    color: #4d4d4d;
+    min-width: 230px;
+    max-width: 550px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-weight: 300;
     padding-top: 15px;
     padding-bottom: 20px;
 }
@@ -32,6 +32,13 @@
     border: 1px solid transparent;
     border-radius: 4px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.breakWord {
+    display: block;
+    word-wrap: break-word;
+    max-width: 415px;
+    min-height: 30px;
 }
 
 .commentForm {
